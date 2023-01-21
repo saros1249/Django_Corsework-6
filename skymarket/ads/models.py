@@ -10,7 +10,7 @@ class Ad(models.Model):
     description = models.TextField()
     author = models.ForeignKey("users.User", on_delete=models.CASCADE, related_name="ads")
     created_at = models.DateTimeField(auto_now_add=True)
-    image = models.ImageField()
+    image = models.ImageField(upload_to="media/")
 
     class Meta:
         verbose_name = "Объявление"

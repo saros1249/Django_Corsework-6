@@ -12,7 +12,7 @@ class User(AbstractBaseUser):
     last_name = models.CharField(max_length=20)
     phone = PhoneNumberField()
     is_active = models.BooleanField(default=False)
-    image = models.ImageField()
+    image = models.ImageField(upload_to="media/")
 
     objects = UserManager()
 
