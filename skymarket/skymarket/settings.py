@@ -81,6 +81,9 @@ TEMPLATES = [
 WSGI_APPLICATION = "skymarket.wsgi.application"
 
 REST_FRAMEWORK = {
+    "DEFAULT_FILTER_BACKENDS": [
+        "django_filters.rest_framework.DjangoFilterBackend"
+    ],
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
     "PAGE_SIZE": 10,
     "DEFAULT_AUTHENTICATION_CLASSES": [
@@ -165,7 +168,7 @@ AUTH_USER_MODEL = "users.User"
 
 # Include Email Backend
 # TODO эти переменные мы добавили чтобы помочь Вам настроить почтовый ящик на django.
-# TODO теперь Вам необходимо создать файл .env на основе .env.example
+# TODO теперь Вам необходимо создать файл .env на основе .env.example1
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_USE_TLS = True
 EMAIL_HOST = os.environ.get("EMAIL_HOST", "smtp.gmail.com")
